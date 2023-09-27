@@ -49,21 +49,27 @@ main {
 
     /* Escritorio */
     @media screen and (min-width: 501px) {
-      display: flex;
-      flex-direction: column;
-      width: 100vw;
+      padding: 0 50px;
+      display: grid;
+      /* 3 columnas y 5 filas */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr repeat(3, auto) 1fr;
+
       & .hello {
         font-size: calc(10rem + 1vw);
-        line-height: 4rem;
-        align-self: start;
+        line-height:9rem;
       }
       & .emoticono {
+        grid-column: 2/3;
+        grid-row: 2/3;
         font-size: calc(20rem + 1vw);
+        line-height:11rem;
       }
       & .world {
+        grid-column: 3/4;
+        grid-row: 3/4;
         font-size: calc(10rem + 1vw);
-        line-height: 4rem;
-        align-self: end;
+        line-height:9rem;
       }
     }
   }
